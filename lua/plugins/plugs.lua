@@ -26,7 +26,7 @@ return {
           yaml = { "prettier" },
           markdown = { "prettier" },
           graphql = { "prettier" },
-          java = { "clang-format" },
+          java = { "google-java-format" },
           lua = { "stylua" },
           python = { "autopep8" },
           xml = { "xmlformatter" },
@@ -128,4 +128,60 @@ return {
       ls_path = sp_path .. "/language-server.jar",
     },
   },
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+    },
+  },
+  {
+    "scalameta/nvim-metals",
+    ft = { "scala", "sbt" },
+    dependencies = {
+      "saghen/blink.cmp",
+    },
+
+    opts = function()
+      local metals_config = require("metals").bare_config()
+
+      -- ✅ IMPORTANT: blink capabilities (fixes auto-import + completion)
+      metals_config.capabilities = require("blink.cmp").get_lsp_capabilities()
+
+      metals_config.init_options.statusBarProvider = "off"
+
+      metals_config.settings = {
+        showImplicitArguments = true,
+        showInferredType = true,
+        excludedPackages = {},
+      }
+
+      metals_config.on_attach = function(client, bufnr)
+        -- Optional keymaps
+        local opts = { buffer = bufnr, silent = true }
+
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+        vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+      end
+
+      return metals_config
+    end,
+
+    config = function(_, metals_config)
+      local group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "scala", "sbt" },
+        callback = function()
+          require("metals").initialize_or_attach(metals_config)
+        end,
+        group = group,
+      })
+    end,
+  },
+  -- {
+  --   "AntonVanAssche/music-controls.nvim",
+  -- },
 }
