@@ -1,5 +1,5 @@
 -- Refresh oil-git-status when returning to an oil buffer
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "FugitiveChanged" }, {
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
   pattern = "oil://*",
   callback = function()
     local oil_git_status = package.loaded["oil-git-status"]

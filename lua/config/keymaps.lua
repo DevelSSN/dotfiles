@@ -22,7 +22,7 @@ wk.add({
       { "<leader>c", group = "code" },
       { "<leader>cq", vim.diagnostic.setloclist, desc = "Quickfix List" },
       { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action" },
-      { "<leader>cD", vim.lsp.buf.definition, desc = "Go to Definition" },
+      { "<leader>cd", vim.lsp.buf.definition, desc = "Go to Definition" },
       { "<leader>ct", vim.lsp.buf.type_definition, desc = "Type Definition" },
       { "<leader>cr", vim.lsp.buf.references, desc = "References" },
       { "<leader>ck", vim.lsp.buf.hover, desc = "Hover" },
@@ -37,17 +37,26 @@ wk.add({
 
     {
       { "<leader>f", group = "file" },
-      { "<leader>ff", "<cmd>Oil<CR>", desc = "Oil File Manager" },
-      { "<leader>fs", "<cmd>Screenkey toggle<CR>", desc = "Screenkey toggle" },
+      { "<leader>ff", "<CMD>Oil --float<CR>", desc = "Oil File Manager" },
+      { "-", "<CMD>Oil --float<CR>", desc = "Open parent directory" },
+      { "<leader>fF", "<CMD>Oil<CR>", desc = "Oil File Manager" },
+      { "<leader>fs", "<CMD>SCReenkey toggle<CR>", desc = "Screenkey toggle" },
     },
     {
       { "<leader>p", group = "plugin" },
-      { "<leader>pl", "<cmd>Lazy<CR>", desc = "LazyDev" },
-      { "<leader>pm", "<cmd>Mason<CR>", desc = "Mason" },
+      { "<leader>pl", "<CMD>Lazy<CR>", desc = "LazyDev" },
+      { "<leader>pm", "<CMD>Mason<CR>", desc = "Mason" },
     },
     {
       { "<leader>g", group = "Git" },
-      { "<leader>gg", "<cmd>Git<CR>", desc = "Fugitive" },
+      { "<leader>gg", "<CMD>Git<CR>", desc = "Fugitive" },
     },
+    {
+      { "<leader>b", group = "buffer" },
+      { "<leader>bd", "<CMD>bd<CR>", desc = "Delete buffer" },
+      { "<leader>bq", "<CMD>bd<CR><CMD>q<CR>", desc = "Delete buffer" },
+    },
+    { "<Tab>", "<CMD>tabnext<CR>", desc = "Next buffer" },
+    { "<S-Tab>", "<CMD>tabprevious<CR>", desc = "Previous buffer" },
   },
 })
