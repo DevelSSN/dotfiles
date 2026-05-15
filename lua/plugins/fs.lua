@@ -4,16 +4,16 @@ return {
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {
+
       win_options = {
         signcolumn = "yes:2",
       },
+      watch_for_changes = true,
     },
-    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
     lazy = false,
   },
   {
     "refractalize/oil-git-status.nvim",
-
     config = true,
   },
   {

@@ -37,7 +37,7 @@ wk.add({
 
     {
       { "<leader>f", group = "file" },
-      { "<leader>f", "<cmd>Oil<CR>", desc = "Oil File Manager" },
+      { "<leader>ff", "<cmd>Oil<CR>", desc = "Oil File Manager" },
       { "<leader>fs", "<cmd>Screenkey toggle<CR>", desc = "Screenkey toggle" },
     },
     {
