@@ -38,11 +38,16 @@ wk.add({
     {
       { "<leader>f", group = "file" },
       { "<leader>f", "<cmd>Oil<CR>", desc = "Oil File Manager" },
+      { "<leader>fs", "<cmd>Screenkey toggle<CR>", desc = "Screenkey toggle" },
     },
     {
-      { "<leader>p", group = "file" },
+      { "<leader>p", group = "plugin" },
       { "<leader>pl", "<cmd>Lazy<CR>", desc = "LazyDev" },
       { "<leader>pm", "<cmd>Mason<CR>", desc = "Mason" },
+    },
+    {
+      { "<leader>g", group = "Git" },
+      { "<leader>gg", "<cmd>Git<CR>", desc = "Fugitive" },
     },
   },
 })

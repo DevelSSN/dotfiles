@@ -11,10 +11,9 @@ return {
     "nvim-mini/mini.icons",
     opts = {},
   },
-  { "nvim-mini/mini.comment", version = false },
+  { "nvim-tree/nvim-web-devicons", opts = {} },
   { "nvim-mini/mini.move", version = false },
   { "nvim-mini/mini.surround", version = false },
-  { "nvim-tree/nvim-web-devicons", opts = {} },
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
@@ -22,7 +21,7 @@ return {
   },
   {
     "romus204/tree-sitter-manager.nvim",
-    dependencies = {}, -- tree-sitter CLI must be installed system-wide
+    dependencies = {},
     config = function()
       require("tree-sitter-manager").setup({})
     end,
@@ -34,5 +33,11 @@ return {
       "nvim-lua/plenary.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
+  },
+  {
+    "NStefan002/screenkey.nvim",
+    lazy = false,
+    version = "*",
+    opts = {},
   },
 }
