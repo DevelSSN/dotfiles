@@ -1,4 +1,5 @@
 local opt = vim.opt
+
 opt.relativenumber = true
 
 opt.ignorecase = true
@@ -13,6 +14,7 @@ opt.list = true
 opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 opt.colorcolumn = "80"
+opt.splitright = true
 
 opt.inccommand = "split"
 opt.undofile = true
