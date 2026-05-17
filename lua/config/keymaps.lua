@@ -50,6 +50,9 @@ wk.add({
     {
       { "<leader>g", group = "Git" },
       { "<leader>gg", "<CMD>Git<CR>", desc = "Fugitive" },
+      { "<leader>gh", "<CMD>Gitsigns preview_hunk_inline<CR>", desc = "Preview Hunk" },
+      { "<leader>ghs", "<CMD>Gitsigns stage_hunk<CR>", desc = "Preview Hunk" },
+      { "<leader>ghs", "<CMD>Gitsigns stage_hunk<CR>", desc = "Preview Hunk" },
     },
     {
       { "<leader>b", group = "buffer" },
