@@ -5,7 +5,7 @@ wk.add({
   { "<leader>f", group = "file" },
   { "-", "<CMD>Oil --float<CR>", desc = "Open parent directory" },
   { "<leader>ff", "<CMD>Oil<CR>", desc = "Oil File Manager" },
-  { "<leader>fs", "<CMD>SCReenkey toggle<CR>", desc = "Screenkey toggle" },
+  { "<leader>fs", "<CMD>Screenkey toggle<CR>", desc = "Screenkey toggle" },
 })
 return {
   {

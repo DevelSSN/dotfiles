@@ -5,6 +5,7 @@ wk.add({
   { "<leader>gg", "<CMD>Git<CR>", desc = "Fugitive" },
   { "<leader>gh", "<CMD>Gitsigns preview_hunk_inline<CR>", desc = "Preview Hunk" },
   { "<leader>ghs", "<CMD>Gitsigns stage_hunk<CR>", desc = "Stage Hunk" },
+  { "<leader>ghu", "<CMD>Gitsigns undo_stage_hunk<CR>", desc = "Stage Hunk" },
 })
 return {
   {

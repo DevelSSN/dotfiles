@@ -1,3 +1,53 @@
+local theme = {
+  fill = "TabbyFill",
+  head = "TabbyHead",
+  current_tab = "TabbyCurrent",
+  tab = "TabbyTab",
+  win = "TabbyWin",
+  tail = "TabbyTail",
+}
+
+local tabline = {
+  line = function(line)
+    return {
+      {
+        { "  ", hl = theme.head },
+        margin = " ",
+      },
+
+      line.tabs().foreach(function(tab)
+        local hl = tab.is_current() and theme.current_tab or theme.tab
+
+        return {
+          { "[", hl = hl },
+
+          {
+            tab.is_current() and "  " or "  ",
+            hl = hl,
+          },
+
+          {
+            tab.number(),
+            hl = hl,
+          },
+
+          {
+            tab.is_current() and (" " .. tab.name() .. " ") or "",
+            hl = hl,
+          },
+
+          { "]", hl = hl },
+        }
+      end),
+
+      line.spacer(),
+
+      hl = theme.fill,
+    }
+  end,
+}
+
+local statusline = {}
 local wk = require("which-key")
 wk.add({
   { mode = "n" },
@@ -14,14 +64,20 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     config = function()
-      require("lualine").setup()
+      require("lualine").setup(statusline)
     end,
   },
   {
     "nanozuki/tabby.nvim",
     ---@type TabbyConfig
+    -- opts = tabline,
     opts = {
-      -- configs...
+      preset = "active_wins_at_tail",
+      option = {
+        lualine_theme = "gruvbox", -- Uses the active lualine theme colors
+        nerdfont = true,
+      },
     },
+    lazy = false,
   },
 }
