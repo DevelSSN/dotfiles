@@ -1,29 +1,5 @@
 return {
   {
-    "stevearc/oil.nvim",
-    ---@module 'oil'
-    ---@type oil.SetupOpts
-    opts = {
-
-      win_options = {
-        signcolumn = "yes:2",
-      },
-      watch_for_changes = true,
-    },
-    lazy = false,
-  },
-  {
-    "refractalize/oil-git-status.nvim",
-    config = true,
-  },
-  {
-    "nvim-mini/mini.icons",
-    opts = {},
-  },
-  { "nvim-tree/nvim-web-devicons", opts = {} },
-  { "nvim-mini/mini.move", version = false },
-  { "nvim-mini/mini.surround", version = false },
-  {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = {},
@@ -42,11 +18,5 @@ return {
       "nvim-lua/plenary.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
-  },
-  {
-    "NStefan002/screenkey.nvim",
-    lazy = false,
-    version = "*",
-    opts = {},
   },
 }
