@@ -1,0 +1,6 @@
+function mcd(){
+    mkdir -p "$1" && cd "$1"
+  }
+alias cd=pushd
+alias pcd=popd
+alias ll="ls -la"

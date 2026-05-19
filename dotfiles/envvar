@@ -1,0 +1,10 @@
+export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
+export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/nvim/mason/share/jdtls/lombok.jar"
+export ANDROID_HOME="$HOME/Android/Sdk"
+export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 -r $ANDROID_HOME/ndk)"
+export RUSTUP_HOME="$HOME/.rustup"
+export CARGO_HOME="$HOME/.cargo/"
+export COURSIER_HOME="$HOME/.local/share/coursier/"
+
+export PATH="$PATH:$CARGO_HOME/bin/:$COURSIER_HOME/bin"
+
